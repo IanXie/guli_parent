@@ -13,11 +13,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
+ * 注意: 需要在每个启动类上添加注解@EnableSwagger2配置swaggerUI
  * Swagger访问路径: http://localhost:8001/swagger-ui.html
+ *                http://localhost:8002/swagger-ui.html
+ *
  */
 
 @Configuration
-@EnableSwagger2
 public class SwaggerConfig {
     @Bean
     public Docket webApiConfig(){

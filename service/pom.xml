@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>service_edu</module>
-        <module>service_meta</module>
+        <module>service_metadata</module>
     </modules>
 
     <properties>
