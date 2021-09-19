@@ -82,7 +82,7 @@ public class EduTeacherController {
     }
 
 
-    // 条件查询带分页, @RequestBody需要和@PostMapping一起使用
+    // 条件查询带分页, @RequestBody 需要和@PostMapping一起使用
     @ApiOperation(value = "多条件组合查询讲师")
     @PostMapping("pageTeacherCondition/{current}/{limit}")
     public R pageTeacherCondition(@ApiParam(name = "current", value = "当前页码", required = true) @PathVariable long current,

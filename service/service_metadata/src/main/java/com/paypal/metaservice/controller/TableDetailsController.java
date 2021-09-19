@@ -4,6 +4,7 @@ package com.paypal.metaservice.controller;
 import com.atguigu.commonutils.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.paypal.metaservice.entity.TableDetails;
+import com.paypal.metaservice.entity.lineage.LineageQuery;
 import com.paypal.metaservice.entity.lineage.TableQuery;
 import com.paypal.metaservice.service.TableDetailsService;
 import io.swagger.annotations.Api;
@@ -23,7 +24,7 @@ import java.util.List;
  * @since 2021-08-28
  */
 
-@Api(tags = "Metadata Management")
+@Api(tags = "Table Management")
 @RestController
 @RequestMapping("/metaservice/table-details")
 @CrossOrigin //跨域问题
@@ -65,5 +66,6 @@ public class TableDetailsController {
             return R.error();
         }
     }
+
 }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.paypal.metaservice.mapper.TableDependencyMapper">
+
+  <select id="getDependencyByName" parameterType="com.paypal.metaservice.entity.lineage.LineageQuery" resultType="com.paypal.metaservice.entity.TableDependency">
+    SELECT id,
+           table_name as tableName,
+           parent_id as parentId,
+           sort as sort,
+           gmt_create as gmtCreate,
+           gmt_modified as gmtModified
+    FROM table_dependency WHERE table_name = #{name}
+  </select>
+</mapper>

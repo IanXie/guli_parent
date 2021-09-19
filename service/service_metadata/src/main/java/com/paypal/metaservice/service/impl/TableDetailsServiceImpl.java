@@ -3,6 +3,7 @@ package com.paypal.metaservice.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.paypal.metaservice.entity.TableDetails;
+import com.paypal.metaservice.entity.lineage.LineageQuery;
 import com.paypal.metaservice.entity.lineage.TableQuery;
 import com.paypal.metaservice.mapper.TableDetailsMapper;
 import com.paypal.metaservice.service.TableDetailsService;
@@ -67,4 +68,6 @@ public class TableDetailsServiceImpl extends ServiceImpl<TableDetailsMapper, Tab
         baseMapper.selectPage(pageParam, queryWrapper);
 
     }
+
+
 }
