@@ -33,16 +33,16 @@ public class TableDependency implements Serializable {
     private String tableName;
 
     @ApiModelProperty(value = "parent id")
-    private Integer parentId;
+    private Integer pid;
 
-    @ApiModelProperty(value = "sort column")
-    private Integer sort;
-
-    @ApiModelProperty(value = "create time")
-    private Date gmtCreate;
-
-    @ApiModelProperty(value = "update time")
-    private Date gmtModified;
+//    @ApiModelProperty(value = "sort column")
+//    private Integer sort;
+//
+//    @ApiModelProperty(value = "create time")
+//    private Date gmtCreate;
+//
+//    @ApiModelProperty(value = "update time")
+//    private Date gmtModified;
 
 
 }

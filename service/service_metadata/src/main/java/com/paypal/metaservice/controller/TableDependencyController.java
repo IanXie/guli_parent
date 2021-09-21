@@ -7,7 +7,9 @@ import com.paypal.metaservice.entity.lineage.LineageQuery;
 import com.paypal.metaservice.service.TableDependencyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,9 +39,24 @@ public class TableDependencyController {
     @ApiOperation(value = "查询表的血缘关系")
     @PostMapping("tableLineage")
     public R getChildTablesByName(@RequestBody(required = false) LineageQuery lineageQuery){
-        List<TableDependency> depData = tableDependencyService
+        List<TableDependency> resultData = tableDependencyService
             .getDependencyByName(lineageQuery);
-        return R.ok().data("data", depData);
+
+//        if(resultData.isEmpty()){
+//            return R.ok();
+//        }
+//
+//        Map<String, Object> childrenData = new HashMap();
+//
+//        resultData.get(0).get
+//
+//        for (int i = 0; i < resultData.size(); i++) {
+//
+//            for (int j = 1; j < resultData.size(); j++) {
+//
+//            }
+//        }
+        return R.ok().data("data", resultData);
     }
 }
 
