@@ -6,13 +6,13 @@ import lombok.Data;
 @Data
 public class TableQuery {
 
-    @ApiModelProperty(value = "数据库名称")
+    @ApiModelProperty(value = "数据库名称", example = "pp_cs_ods")
     private String db;
 
-    @ApiModelProperty(value = "表名,模糊查询")
+    @ApiModelProperty(value = "表名,模糊查询", example = "fact_cs_ee_case")
     private String name;
 
-    @ApiModelProperty(value = "owner")
+    @ApiModelProperty(value = "owner", example = "GCCI")
     private String owner;
 
     @ApiModelProperty(value = "查询开始时间", example = "2021-01-01 10:10:10")

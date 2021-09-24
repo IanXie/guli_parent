@@ -8,6 +8,7 @@ import com.paypal.metaservice.service.TableDependencyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,26 +38,15 @@ public class TableDependencyController {
     TableDependencyService tableDependencyService;
 
     @ApiOperation(value = "查询表的血缘关系")
-    @PostMapping("tableLineage")
+    @PostMapping("getLineage")
     public R getChildTablesByName(@RequestBody(required = false) LineageQuery lineageQuery){
-        List<TableDependency> resultData = tableDependencyService
+        // 这里没必要返回List,一个表只对应一个对象，前端也只能传数据对象data:{}
+//        List<LinkedHashMap> resultData = tableDependencyService
+//            .getDependencyByName(lineageQuery);
+        Map<String, LinkedHashMap> resultData = tableDependencyService
             .getDependencyByName(lineageQuery);
 
-//        if(resultData.isEmpty()){
-//            return R.ok();
-//        }
-//
-//        Map<String, Object> childrenData = new HashMap();
-//
-//        resultData.get(0).get
-//
-//        for (int i = 0; i < resultData.size(); i++) {
-//
-//            for (int j = 1; j < resultData.size(); j++) {
-//
-//            }
-//        }
-        return R.ok().data("data", resultData);
+        return R.ok().data("lineage", resultData.get("result"));
     }
 }
 

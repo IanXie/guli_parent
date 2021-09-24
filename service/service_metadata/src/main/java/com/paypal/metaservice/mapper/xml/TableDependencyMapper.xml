@@ -2,14 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.paypal.metaservice.mapper.TableDependencyMapper">
 
+
+<!--  FROM table_dependency WHERE FIND_IN_SET(id,getTabChildrenListByName(#{name}))-->
   <select id="getDependencyByName" parameterType="com.paypal.metaservice.entity.lineage.LineageQuery" resultType="com.paypal.metaservice.entity.TableDependency">
     SELECT id,
            table_name as tableName,
            pid as pid
---            sort as sort,
---            gmt_create as gmtCreate,
---            gmt_modified as gmtModified
-    FROM table_dependency WHERE FIND_IN_SET(id,getTabChildrenListByName(#{name}))
+    FROM table_dependency
     ORDER BY pid ASC;
   </select>
 </mapper>
